@@ -1,3 +1,5 @@
+Forked with the intent to remove minor jQuery dependencies and other fixes needed since g00fy seem to be absent.
+
 # AngularJS datepicker directives
 
 ## WIP
@@ -9,12 +11,12 @@
 
 #### Development version 
 
-Checkout, run `grunt install` and `bower install`.
+Checkout, run `npm install` and `bower install`.
 To build run `grunt build`
 
 ## Examples
 
-[Live demo](https://rawgithub.com/g00fy-/angular-datepicker/master/app/index.html)
+[Live demo](https://rawgithub.com/PeterSoder/angular-datepicker/master/app/index.html)
 
 
 ##### defaults

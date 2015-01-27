@@ -14,7 +14,7 @@
 
 [date-range] [date-picker] {
   .after.before{
-    .buttonBackground(@btnInfoBackground, spin(@btnInfoBackgroundHighlight, 20));
+    .buttonBackground(@btn-info-color, spin(@btn-info-bg, 20));
   }
 }
 
@@ -54,24 +54,24 @@
 			cursor: pointer;
 			.border-radius(4px);
 			&:hover {
-				background: @grayLighter;
+				background: @gray-lighter;
 			}
 			&.disabled, &.disabled:hover {
 				background:none;
-				color: @grayLight;
+				color: @gray-light;
 				cursor: default;
 			}
 
   }
 
   .active , .now{
-    .buttonBackground(@btnPrimaryBackground, spin(@btnPrimaryBackground, 20));
+    .buttonBackground(@btn-primary-bg, spin(@btn-primary-bg, 20));
     color: #fff;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
   }
 
   .now {
-    .buttonBackground(@btnDangerBackground, spin(@btnDangerBackground, 20));
+    .buttonBackground(@btn-danger-bg, spin(@btn-danger-bg, 20));
   }
 
   .disabled {
@@ -100,7 +100,7 @@
   }
 
   th:hover, [ng-switch-when="date"] td span:hover{
-    background: @grayLighter;
+    background: @gray-lighter;
 	  cursor: pointer;
   }
 }

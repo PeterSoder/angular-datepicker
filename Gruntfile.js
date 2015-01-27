@@ -25,7 +25,7 @@ module.exports = function (grunt) {
     watch: {
       less: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
-        tasks: ['recess', 'copy:styles'],
+        tasks: ['less', 'copy:styles'],
         options: {
           nospawn: true
         }
@@ -43,22 +43,18 @@ module.exports = function (grunt) {
         ]
       }
     },
-    recess: {
-      options: {
-        compile: true
-      },
-      dist: {
-        files: [
-          {
-            expand: true,
-            cwd: '<%= yeoman.app %>/styles',
-            src: 'style.less',
-            dest: '<%= yeoman.tmp %>/styles/',
-            ext: '.css'
-          }
-        ]
-      }
-    },
+	less: {
+		options: {
+			compress: true,
+			yuicompress: true,
+			optimization: 2
+		},
+		dist: {
+			files: {
+				"<%= yeoman.tmp %>/styles/style.css":"<%= yeoman.app %>/styles/style.less"
+			}
+		}
+	},
     connect: {
       options: {
         port: 9000,
@@ -168,7 +164,7 @@ module.exports = function (grunt) {
     },
     concurrent: {
       server: [
-        'recess',
+        'less',
         'copy:styles'
       ],
       test: [
@@ -205,7 +201,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('server', [
     'clean:server',
-    'recess',
+    'less',
     'concurrent:server',
     'connect:livereload',
     'open',
@@ -221,7 +217,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'jshint',
     'clean:dist',
-    'recess',
+    'less',
     'ngtemplates',
     'concat',
     'cssmin',

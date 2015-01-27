@@ -171,23 +171,23 @@ Module.directive('datePicker', ['datePickerConfig', 'datePickerUtils', function 
       };
 
       scope.isSameMonth = function (date) {
-        return datePickerUtils.isSameMonth(scope.model, date);
+        return datePickerUtils.isSameMonth(scope.date, date);
       };
 
       scope.isSameYear = function (date) {
-        return datePickerUtils.isSameYear(scope.model, date);
+        return datePickerUtils.isSameYear(scope.date, date);
       };
 
       scope.isSameDay = function (date) {
-        return datePickerUtils.isSameDay(scope.model, date);
+        return datePickerUtils.isSameDay(scope.date, date);
       };
 
       scope.isSameHour = function (date) {
-        return datePickerUtils.isSameHour(scope.model, date);
+        return datePickerUtils.isSameHour(scope.date, date);
       };
 
       scope.isSameMinutes = function (date) {
-        return datePickerUtils.isSameMinutes(scope.model, date);
+        return datePickerUtils.isSameMinutes(scope.date, date);
       };
 
       scope.isNow = function (date) {
